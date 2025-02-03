@@ -1,11 +1,33 @@
+import Usermodel from "../models/user.schema.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+export const UserData=async (req,res)=>{
+    try{
+        console.log(req.cookies,"your cookie")
+        const token=req.cookies.Token
+        if(!token) return res.status(400).json({success:false})
+        const tokendata=jwt.verify(token,process.env.ENCRYPTIONSECRET)
+    console.log(tokendata)
+    const userexist=await Usermodel.findById(tokendata.Userid)
+    console.log(userexist)
+    if(!userexist) return res.status(400).json({success:false})
+        return res.status(200).json({success:true,UserData:{
+            email:userexist.email,name:userexist.name,userId:userexist._id
+        }})
+
+      
+    }
+    catch(error){
+        
+        return res.json({message:error,success:false})
+    }
+}
 
 export const Login=async (req,res)=>{
     try{
     
-    const{email,password}=req.body.UserData;
+    const{email,password}=req.body.userData;
     console.log("email",email,"password",password)
     if(!email || !password){
         return res.json({message:"Fill the fields", success:false})
@@ -15,7 +37,7 @@ export const Login=async (req,res)=>{
     if(!existemail){
         return res.json({message:"Email not found Try again",success:false})
     }
-    const passwordcheck=await bcrypt.compare(password,existemail.password)
+    const passwordcheck= await bcrypt.compare(password,existemail.password)
     if(!passwordcheck){
         return res.json({message:"wrong password Try again",success:false})
     }

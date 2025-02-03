@@ -5,6 +5,8 @@ import Home from './components/home';
 import Register from './components/register';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
+import Courseform from './components/courseform';
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/dashboard' element={<Dashboard/>}></Route>
+        <Route path='/course' element={<Courseform/>}></Route>
       </Routes>
 
 

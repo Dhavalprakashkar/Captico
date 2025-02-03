@@ -25,11 +25,11 @@ function Login() {
         }
             
             try {
-                const response=await api.post("/auth/login",{UserData:state})
+                const response=await api.post("/auth/login",{userData:state})
                 if(response.data.success){
                     // dispatch({type:"login",payload:response.data.Userdata})
                     alert(response.data.message)
-                    path("/")
+                    path("/dashboard")
 
                 }
                 else{

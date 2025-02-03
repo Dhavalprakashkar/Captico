@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import cors from 'cors'
 import cookieParser from "cookie-parser"
-import Routing from './routes/authroute.js'
+import Routing from './routes/index.js'
 
 const app = express()
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
