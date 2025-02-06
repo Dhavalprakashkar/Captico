@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
+
 const Home = () => {
     const path= useNavigate()
 
@@ -14,7 +15,7 @@ const Home = () => {
     
   return (
     <div>
-    <div>Welcome!</div>
+    <div style={{fontSize:"90px"}}>Welcome</div>
     <button onClick={toregister}>Register</button>
     <button onClick={tologin}>Login</button>
     </div>
