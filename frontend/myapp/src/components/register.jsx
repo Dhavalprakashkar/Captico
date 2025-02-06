@@ -54,7 +54,7 @@ function Register() {
 
   return (
     <div>
-      <h1>Register</h1>
+      <h1 style={{color:"white"}}>Register</h1>
       <form onSubmit={handleSubmit}>
         <label>Name</label>
         

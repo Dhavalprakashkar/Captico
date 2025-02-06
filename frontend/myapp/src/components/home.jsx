@@ -15,7 +15,7 @@ const Home = () => {
     
   return (
     <div>
-    <div style={{fontSize:"90px"}}>Welcome</div>
+    <div style={{fontSize:"90px",color:"white"}}>Welcome User</div>
     <button onClick={toregister}>Register</button>
     <button onClick={tologin}>Login</button>
     </div>

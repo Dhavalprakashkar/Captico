@@ -45,7 +45,7 @@ const Courseform = () => {
     }
   return (
     <div>
-        <button onClick={()=>{path("/")}}>HOME</button>
+        <button onClick={()=>{path("/")}}>  🏠︎ Home</button>
         <button onClick={()=>{path("/dashboard")}}>DASHBOARD</button>
 
         <form onSubmit={submit} autoComplete="off">

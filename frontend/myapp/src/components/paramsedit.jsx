@@ -67,9 +67,9 @@ const Paramsedit = () => {
     
   return (
   <div>
-    <button onClick={dash}>Dashboard</button>
+    <button onClick={dash}> Dashboard</button>
     
-    <h1 style={{color:"red"}}>{state.name} course</h1>
+    <h1 style={{color:"white"}}>{state.name} course</h1>
     
     <div class="container">
       
